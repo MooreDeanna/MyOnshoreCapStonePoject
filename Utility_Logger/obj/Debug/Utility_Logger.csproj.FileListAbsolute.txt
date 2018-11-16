@@ -1,0 +1,6 @@
+C:\Users\admin2\source\repos\HaloKDACalculator\Utility_Logger\bin\Debug\Utility_Logger.dll
+C:\Users\admin2\source\repos\HaloKDACalculator\Utility_Logger\bin\Debug\Utility_Logger.pdb
+C:\Users\admin2\source\repos\HaloKDACalculator\Utility_Logger\obj\Debug\Utility_Logger.csprojAssemblyReference.cache
+C:\Users\admin2\source\repos\HaloKDACalculator\Utility_Logger\obj\Debug\Utility_Logger.csproj.CoreCompileInputs.cache
+C:\Users\admin2\source\repos\HaloKDACalculator\Utility_Logger\obj\Debug\Utility_Logger.dll
+C:\Users\admin2\source\repos\HaloKDACalculator\Utility_Logger\obj\Debug\Utility_Logger.pdb

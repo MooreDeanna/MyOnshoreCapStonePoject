@@ -1,0 +1,14 @@
+C:\Users\admin2\source\repos\HaloKDACalculator\HaloKDACalculator\bin\Debug\HaloKDACalculator.exe.config
+C:\Users\admin2\source\repos\HaloKDACalculator\HaloKDACalculator\bin\Debug\HaloKDACalculator.exe
+C:\Users\admin2\source\repos\HaloKDACalculator\HaloKDACalculator\bin\Debug\HaloKDACalculator.pdb
+C:\Users\admin2\source\repos\HaloKDACalculator\HaloKDACalculator\bin\Debug\DataAccessLayer.dll
+C:\Users\admin2\source\repos\HaloKDACalculator\HaloKDACalculator\bin\Debug\LogicLayer.dll
+C:\Users\admin2\source\repos\HaloKDACalculator\HaloKDACalculator\bin\Debug\Utility_Logger.dll
+C:\Users\admin2\source\repos\HaloKDACalculator\HaloKDACalculator\bin\Debug\DataAccessLayer.pdb
+C:\Users\admin2\source\repos\HaloKDACalculator\HaloKDACalculator\bin\Debug\LogicLayer.pdb
+C:\Users\admin2\source\repos\HaloKDACalculator\HaloKDACalculator\bin\Debug\Utility_Logger.pdb
+C:\Users\admin2\source\repos\HaloKDACalculator\HaloKDACalculator\obj\Debug\HaloKDACalculator.csprojAssemblyReference.cache
+C:\Users\admin2\source\repos\HaloKDACalculator\HaloKDACalculator\obj\Debug\HaloKDACalculator.csproj.CoreCompileInputs.cache
+C:\Users\admin2\source\repos\HaloKDACalculator\HaloKDACalculator\obj\Debug\HaloKDACalculator.csproj.CopyComplete
+C:\Users\admin2\source\repos\HaloKDACalculator\HaloKDACalculator\obj\Debug\HaloKDACalculator.exe
+C:\Users\admin2\source\repos\HaloKDACalculator\HaloKDACalculator\obj\Debug\HaloKDACalculator.pdb

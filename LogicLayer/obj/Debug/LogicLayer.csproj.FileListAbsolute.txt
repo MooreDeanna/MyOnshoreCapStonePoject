@@ -1,0 +1,11 @@
+C:\Users\admin2\source\repos\HaloKDACalculator\LogicLayer\bin\Debug\LogicLayer.dll
+C:\Users\admin2\source\repos\HaloKDACalculator\LogicLayer\bin\Debug\LogicLayer.pdb
+C:\Users\admin2\source\repos\HaloKDACalculator\LogicLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\admin2\source\repos\HaloKDACalculator\LogicLayer\bin\Debug\Utility_Logger.dll
+C:\Users\admin2\source\repos\HaloKDACalculator\LogicLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\admin2\source\repos\HaloKDACalculator\LogicLayer\bin\Debug\Utility_Logger.pdb
+C:\Users\admin2\source\repos\HaloKDACalculator\LogicLayer\obj\Debug\LogicLayer.csprojAssemblyReference.cache
+C:\Users\admin2\source\repos\HaloKDACalculator\LogicLayer\obj\Debug\LogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\admin2\source\repos\HaloKDACalculator\LogicLayer\obj\Debug\LogicLayer.csproj.CopyComplete
+C:\Users\admin2\source\repos\HaloKDACalculator\LogicLayer\obj\Debug\LogicLayer.dll
+C:\Users\admin2\source\repos\HaloKDACalculator\LogicLayer\obj\Debug\LogicLayer.pdb

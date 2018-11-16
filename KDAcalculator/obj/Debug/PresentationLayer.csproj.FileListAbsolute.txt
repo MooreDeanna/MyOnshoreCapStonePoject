@@ -1,0 +1,2 @@
+C:\Users\admin2\source\repos\HaloKDACalculator\KDAcalculator\obj\Debug\PresentationLayer.csprojAssemblyReference.cache
+C:\Users\admin2\source\repos\HaloKDACalculator\KDAcalculator\obj\Debug\PresentationLayer.csproj.CoreCompileInputs.cache

@@ -1,0 +1,9 @@
+C:\Users\admin2\source\repos\HaloKDACalculator\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\admin2\source\repos\HaloKDACalculator\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\admin2\source\repos\HaloKDACalculator\DataAccessLayer\bin\Debug\Utility_Logger.dll
+C:\Users\admin2\source\repos\HaloKDACalculator\DataAccessLayer\bin\Debug\Utility_Logger.pdb
+C:\Users\admin2\source\repos\HaloKDACalculator\DataAccessLayer\obj\Debug\DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\admin2\source\repos\HaloKDACalculator\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\admin2\source\repos\HaloKDACalculator\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+C:\Users\admin2\source\repos\HaloKDACalculator\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\admin2\source\repos\HaloKDACalculator\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
