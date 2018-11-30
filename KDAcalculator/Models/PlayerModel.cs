@@ -9,10 +9,12 @@ namespace PresentationLayer.Models
 {
     public class PlayerModel
     {
+        public bool _Delete { get; set; } = false;
+        public bool _Update { get; set; } = false;
         //The DisplayName message is what will show up for the corosponding text box below it when run
         [DisplayName("What would you like to be called?")]
         [Required(ErrorMessage = "***This field is required***")]
-        public string PlayerName { get; set; }//constructors
+        public string PlayerName { get; set; }//constructors       
 
         [DisplayName("What would you like your TopSecret Passcode to be?")]
         [Required(ErrorMessage = "***This field is required***")]

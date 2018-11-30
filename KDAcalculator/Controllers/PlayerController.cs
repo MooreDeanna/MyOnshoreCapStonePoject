@@ -22,7 +22,7 @@ namespace PresentationLayer.Controllers
         }
         //Log in Player
         [HttpPost]
-        public ActionResult PlayerLogin(PlayerModel _LogPlayer)
+        public ActionResult Login(PlayerModel _LogPlayer)
         {
             if (ModelState.IsValid)
             {
@@ -30,18 +30,18 @@ namespace PresentationLayer.Controllers
                 PlayerModel _PlayerMod = new PlayerModel();
                 //Filling the UserPO object with the value from mapped data Access
                 _PlayerMod = _mapper.Map(_PlayerDataAccess.LoginPlayer(_mapper.Map(_LogPlayer)));
-                //use _UserMod to fill session variable                
-                Session["UserName"] = _PlayerMod.PlayerName;
-                Session["UserPassword"] = _PlayerMod.PlayerPassword;
+                //use _PlayerMod to fill session variable                
+                Session["PlayerName"] = _PlayerMod.PlayerName;
+                Session["PlayerPassword"] = _PlayerMod.PlayerPassword;
                 Session["FKRoleID"] = _PlayerMod.FKRoleID;
                 //if successfully logged in redirect to the home page             
-                if (Session["UserName"] is null)
+                if (Session["PlayerName"] is null)
                 {
                     return View();
                 }
                 else
                 {
-                    if ((int)Session["FKRoleID"] <= 0)
+                    if ((int)Session["FKRoleID"] >= 0)
                     {
                         return RedirectToAction("Index", "Home");
                     }
@@ -69,10 +69,10 @@ namespace PresentationLayer.Controllers
                 _PlayerDataAccess.AddPlayer(_mapper.Map(_RegPlayer));
                 return RedirectToAction("Index", "Home");
             }
-            return View();
+            return View(_RegPlayer);
         }
         [HttpGet]
-        public ActionResult Register()
+        public ActionResult PlayerRegister()
         {
             PlayerModel _Player = new PlayerModel();
             return View(_Player);
@@ -100,7 +100,7 @@ namespace PresentationLayer.Controllers
             return View();
         }
         [HttpGet]
-        public ActionResult UserUpdate()
+        public ActionResult PlayerUpdate()
         {
             PlayerModel _UpdatePlayer = new PlayerModel();
             return View(_UpdatePlayer);
@@ -119,5 +119,43 @@ namespace PresentationLayer.Controllers
             }
             return View();
         }
+
+        //Admin Update Player Information
+        [HttpPost]
+        public ActionResult AdminUpdate(PlayerList _AdminUpdatePlayer)
+        {
+            if (ModelState.IsValid)
+            {
+                foreach (PlayerModel SinglePlayer in _AdminUpdatePlayer._PlayerList)
+                {
+                    if (SinglePlayer._Update)
+                    {  
+                        
+                    _PlayerDataAccess.UpdatePlayer(_mapper.Map(SinglePlayer));
+                        
+                    }
+                    else if(SinglePlayer._Delete)
+                    {                       
+                        _PlayerDataAccess.DeletePlayer(SinglePlayer.PlayerName);
+                    }
+                }
+
+                return RedirectToAction("AdminUpdate", "Player"); ;
+                
+            }
+            return View();
+        }
+        [HttpGet]
+        public ActionResult AdminUpdate()
+        {
+            if (ModelState.IsValid)
+            {
+                PlayerList _AdminUpdatePlayer = new PlayerList();
+                _AdminUpdatePlayer._PlayerList = (_mapper.Map(_PlayerDataAccess.GetAllPlayers()));
+                return View(_AdminUpdatePlayer);
+            }
+            return View();
+        }
+       
     }
 }

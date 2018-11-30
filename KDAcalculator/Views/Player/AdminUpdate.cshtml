@@ -1,0 +1,72 @@
+﻿@model PresentationLayer.Models.PlayerList
+@using PresentationLayer.Models
+@{
+    ViewBag.Title = "AdminUpdate";
+}
+
+<h2>AdminUpdate</h2>
+@using (Html.BeginForm("AdminUpdate", "Player", FormMethod.Post))
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>PlayerName</th>
+                <th>RoleID</th>
+                <th>Update</th>
+                <th>Delete</th>
+
+
+            </tr>
+        </thead>
+
+
+
+        @{
+            for (int i = 0; i < Model._PlayerList.Count; i++)
+            {
+                if ((string)Session["PlayerName"] == Model._PlayerList[i].PlayerName)
+                {
+                    <tr>
+
+                        <td>@Html.DisplayFor(m => m._PlayerList[i].PlayerName) @Html.HiddenFor(m => m._PlayerList[i].PlayerName)</td>
+                        <td>@Html.DisplayFor(m => m._PlayerList[i].FKRoleID) @Html.HiddenFor(m => m._PlayerList[i].FKRoleID)</td>
+                        <td>@Html.CheckBoxFor(m => m._PlayerList[i]._Update, new { @disabled = "disabled" })</td>
+                        <td>@Html.CheckBoxFor(m => m._PlayerList[i]._Delete, new { @disabled = "disabled" })</td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td>@Html.EditorFor(m => m._PlayerList[i].PlayerName, new { @class = "form-control" })</td>
+                        <td>@Html.EditorFor(m => m._PlayerList[i].FKRoleID, new { @class = "form-control" })</td>
+                        <td>@Html.CheckBoxFor(m => m._PlayerList[i]._Update) </td>
+                        
+
+                        <td>@Html.CheckBoxFor(m => m._PlayerList[i]._Delete)</td>
+
+
+                    </tr>
+
+                }
+                /*model was reading null HiddenFors hold the data to it isn't null*/
+                <td>@Html.HiddenFor(m => m._PlayerList[i].PlayerPassword)</td>
+                <td>@Html.HiddenFor(m => m._PlayerList[i].PlayerFirstName)</td>
+                <td>@Html.HiddenFor(m => m._PlayerList[i].PlayerLastName)</td>
+                <td>@Html.HiddenFor(m => m._PlayerList[i].PlayerCity)</td>
+                <td>@Html.HiddenFor(m => m._PlayerList[i].PlayerState)</td>
+                <td>@Html.HiddenFor(m => m._PlayerList[i].PlayerAge)</td>
+            }
+
+        }
+
+    </table>
+
+    <input type="submit" class="btn-danger" value="Click Me!" />
+
+            }
+
+
+
+

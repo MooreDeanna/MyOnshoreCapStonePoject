@@ -1,0 +1,36 @@
+﻿@model PresentationLayer.Models.PlayerList
+@using PresentationLayer.Models
+
+@{
+    ViewBag.Title = "PlayerView";
+}
+<h2>PlayerView</h2>
+@using (Html.BeginForm("PlayerView", "Player", FormMethod.Post))
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>PlayerName</th>
+                <th>PlayerFirstName</th>               
+                <th>PlayerCity</th>
+                <th>PlayerState</th>
+                <th>PlayerAge</th>   
+            </tr>
+        </thead>
+
+
+        @foreach (PlayerModel PlayerView in Model._PlayerList)
+        {
+        <tr>
+            <td>@Html.DisplayFor(m => PlayerView.PlayerName)</td>
+            <td>@Html.DisplayFor(m => PlayerView.PlayerFirstName)</td>
+            <td>@Html.DisplayFor(m => PlayerView.PlayerCity)</td>
+            <td>@Html.DisplayFor(m => PlayerView.PlayerState)</td>
+            <td>@Html.DisplayFor(m => PlayerView.PlayerAge)</td>           
+        </tr>
+
+        }
+
+    </table>
+}
+

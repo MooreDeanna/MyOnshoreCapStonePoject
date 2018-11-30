@@ -1,0 +1,33 @@
+﻿@model PresentationLayer.Models.TeamList
+@using PresentationLayer.Models
+
+@{
+    ViewBag.Title = "TeamList";
+}
+<h2>TeamView</h2>
+@using (Html.BeginForm("TeamList", "Teams", FormMethod.Post))
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>TeamName</th>
+                <th>Description</th>
+                <th>TeamLead</th>  
+                <th>PositionsAvaliable</th>
+                <th>PositionsTaken</th>
+                
+        @foreach (TeamsModel TeamView in Model._TeamsList)
+        {
+        <tr>
+            <td>@Html.DisplayFor(m => TeamView.TeamName)</td>
+            <td>@Html.DisplayFor(m => TeamView.TeamDescription)</td>
+            <td>@Html.DisplayFor(m => TeamView.FKPlayerName)</td>
+            <td>@Html.DisplayFor(m => TeamView.PositionsAvaliable)</td>
+            <td>@Html.DisplayFor(m => TeamView.PositionsTaken)</td>                        
+            
+        </tr>
+        }
+
+    </table>
+}
+

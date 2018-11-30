@@ -147,6 +147,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ComingSoonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlayerController.cs" />
     <Compile Include="Controllers\StatsController.cs" />
@@ -157,6 +158,7 @@
     <Compile Include="Models\PlayerList.cs" />
     <Compile Include="Models\PlayerModel.cs" />
     <Compile Include="Models\PLMapper.cs" />
+    <Compile Include="Models\RoleModel.cs" />
     <Compile Include="Models\StatsList.cs" />
     <Compile Include="Models\StatsModel.cs" />
     <Compile Include="Models\TeamsModel.cs" />
@@ -203,11 +205,19 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Player\Login.cshtml" />
+    <Content Include="Views\Player\PlayerRegister.cshtml" />
+    <Content Include="Views\Player\PlayerUpdate.cshtml" />
+    <Content Include="Views\Teams\TeamRegister.cshtml" />
+    <Content Include="Views\Teams\TeamUpdate.cshtml" />
+    <Content Include="Views\Teams\TeamView.cshtml" />
+    <Content Include="Views\Player\PlayerView.cshtml" />
+    <Content Include="Views\Stats\StatsView.cshtml" />
+    <Content Include="Views\Stats\StatsUpdate.cshtml" />
+    <Content Include="Views\ComingSoon\ComingSoon.cshtml" />
+    <Content Include="Views\Player\AdminUpdate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Stats\" />
-    <Folder Include="Views\Teams\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -226,6 +236,10 @@
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
       <Project>{f2ca7654-0f8b-44b4-9a2b-0fe49f7055b6}</Project>
       <Name>DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogicLayer\LogicLayer.csproj">
+      <Project>{52f1d064-235d-4c60-92f3-ab20f5b569fa}</Project>
+      <Name>LogicLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

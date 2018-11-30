@@ -1,0 +1,37 @@
+﻿@model PresentationLayer.Models.TeamsModel
+@{
+    ViewBag.Title = "TeamUpdate";
+}
+
+<h2>TeamUpdate</h2>
+
+@using (Html.BeginForm("TeamUpdate", "Teams", FormMethod.Post))
+{
+    // @Html.ValidationSummary()
+    <div class="container">
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.TeamName)
+            @Html.TextBoxFor(m => m.TeamName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.TeamName)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.TeamDescription)
+            @Html.TextBoxFor(m => m.TeamDescription, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.TeamDescription)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.FKPlayerName)
+            @Html.TextBoxFor(m => m.FKPlayerName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.FKPlayerName)
+        </div>
+
+    </div>
+
+
+    <input type="submit" class="btn-danger" value="Finsih Registering Team" />
+
+    <div>
+        @Html.ActionLink("Return Home", "Index")
+    </div>
+}

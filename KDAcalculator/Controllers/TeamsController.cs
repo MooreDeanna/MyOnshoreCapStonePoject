@@ -33,7 +33,7 @@ namespace PresentationLayer.Controllers
             return View();
         }
         [HttpGet]
-        public ActionResult Register()
+        public ActionResult TeamRegister()
         {
             TeamsModel _Teams = new TeamsModel();
             return View(_Teams);

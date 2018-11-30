@@ -1,0 +1,62 @@
+﻿@model PresentationLayer.Models.PlayerModel
+
+@{
+    ViewBag.Title = "PlayerUpdate";
+}
+
+<h2>PlayerUpdate</h2>
+
+@using (Html.BeginForm("PlayerUpdate", "Player", FormMethod.Post))
+{
+
+    // @Html.ValidationSummary()
+    <div class="container">
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.PlayerName)
+            @Html.TextBoxFor(m => m.PlayerName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.PlayerName)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.PlayerFirstName)
+            @Html.TextBoxFor(m => m.PlayerFirstName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.PlayerFirstName)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.PlayerLastName)
+            @Html.TextBoxFor(m => m.PlayerLastName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.PlayerLastName)
+        </div>      
+        <div class="form-group">
+            @Html.LabelFor(m => m.PlayerCity)
+            @Html.TextBoxFor(m => m.PlayerCity, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.PlayerCity)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.PlayerState)
+            @Html.TextBoxFor(m => m.PlayerState, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.PlayerState)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.PlayerAge)
+            @Html.TextBoxFor(m => m.PlayerAge, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.PlayerAge)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.PlayerPassword)
+            @Html.TextBoxFor(m => m.PlayerPassword, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.PlayerPassword)
+        </div>
+        <div class="form-group">
+            @Html.HiddenFor(m => m.FKRoleID)            
+        </div>
+
+    </div>
+    <input type="submit" class="btn-danger" value="Finished? Click Me!" />
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+

@@ -41,10 +41,7 @@ using Utility_Logger;
                             _command.Parameters.AddWithValue("@PlayerState", playerTOAdd.PlayerState);
                             _command.Parameters.AddWithValue("@PlayerAge", playerTOAdd.PlayerAge);
                             _command.Parameters.AddWithValue("@PlayerPassword", playerTOAdd.PlayerPassword);
-                            _command.Parameters.AddWithValue("@FKRoleID", playerTOAdd.FKRoleID);
-                            
-
-
+           
                             //This is where the connection Opens
                             _connection.Open();
                             //this is where it executes the command
@@ -117,9 +114,11 @@ using Utility_Logger;
                                         playerToList.PlayerLastName = _reader.GetString((_reader.GetOrdinal("PlayerLastName")));
                                         playerToList.PlayerCity = _reader.GetString((_reader.GetOrdinal("PlayerCity")));
                                         playerToList.PlayerState = _reader.GetString((_reader.GetOrdinal("PlayerState")));
-                                        playerToList.PlayerAge = _reader.GetInt32((_reader.GetOrdinal("PlayerAge")));                                                                       
+                                        playerToList.PlayerAge = _reader.GetInt32((_reader.GetOrdinal("PlayerAge")));
+                                        playerToList.FKRoleID = _reader.GetInt32((_reader.GetOrdinal("FKRoleID")));
+                                        playerToList.PlayerPassword = _reader.GetString((_reader.GetOrdinal("PlayerPassword")));
 
-                                      _PlayerList.Add(playerToList);
+                                    _PlayerList.Add(playerToList);
                                     }
                                 }
                                 else
@@ -199,11 +198,13 @@ using Utility_Logger;
                             while (_reader.Read())
                             {
                                 _PlayerToList.PlayerName = _reader.GetString((_reader.GetOrdinal("PlayerName")));
+                                _PlayerToList.PlayerPassword = _reader.GetString((_reader.GetOrdinal("PlayerPassword")));
                                 _PlayerToList.PlayerFirstName = _reader.GetString((_reader.GetOrdinal("PlayerFirstName")));
                                 _PlayerToList.PlayerLastName = _reader.GetString((_reader.GetOrdinal("PlayerLastName")));
                                 _PlayerToList.PlayerCity = _reader.GetString((_reader.GetOrdinal("PlayerCity")));
                                 _PlayerToList.PlayerState = _reader.GetString((_reader.GetOrdinal("PlayerState")));
                                 _PlayerToList.PlayerAge = _reader.GetInt32((_reader.GetOrdinal("PlayerAge")));
+                                _PlayerToList.FKRoleID = _reader.GetInt32((_reader.GetOrdinal("FKRoleID")));
                             }
                         }
                     }
@@ -215,7 +216,7 @@ using Utility_Logger;
             }
             return _PlayerToList;
         }
-            public PlayerDAO viewSinglePlayer(string FKPlayerName)
+            public PlayerDAO viewSinglePlayer(string PlayerName)
         {
             PlayerDAO PlayerToView = new PlayerDAO();
 
@@ -229,7 +230,7 @@ using Utility_Logger;
                     {
                         // specify what type of command to use
                         _command.CommandType = CommandType.StoredProcedure;
-                        _command.Parameters.AddWithValue("@FKPlayerName", FKPlayerName);
+                        _command.Parameters.AddWithValue("@PlayerName", PlayerName);
                         // this is where the connection is opened
                         _connection.Open();
                         // this is where all commands will be executed
@@ -537,8 +538,8 @@ using Utility_Logger;
                                         TeamsToList.TeamName = _reader.GetString((_reader.GetOrdinal("TeamName")));
                                         TeamsToList.TeamDescription = _reader.GetString((_reader.GetOrdinal("TeamDescription")));                                       
                                         TeamsToList.FKPlayerName = _reader.GetString((_reader.GetOrdinal("FKPlayerName")));
-                                        TeamsToList.PositionsAvaliable = _reader.GetInt32((_reader.GetOrdinal("PositionAvaliable")));
-                                        TeamsToList.PositionsTaken = _reader.GetInt32((_reader.GetOrdinal("PositionTaken")));                                        
+                                        TeamsToList.PositionsAvaliable = _reader.GetInt32((_reader.GetOrdinal("PositionsAvaliable")));
+                                        TeamsToList.PositionsTaken = _reader.GetInt32((_reader.GetOrdinal("PositionsTaken")));                                        
                                         
 
                                     _TeamsList.Add(TeamsToList);

@@ -3,29 +3,47 @@
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>WELCOME</h1>
+    <p class="lead">Thanks for coming. This App is designed to generate updated Personal and Team KDA's after each game. We Hope You enjoy.</p>    
 </div>
 
 <div class="row">
+    @if (Session["PlayerName"] == null)
+    {
+        <div class="col-md-4">
+            <h2>Things are hidden!</h2>
+            <p>
+                You Currently Are Not Logged In. Please Log In To Have Access To The Hidden Aspects.
+            </p>
+            <p>@Html.ActionLink("Please Log In", "Login", "Player", null, new { @class = "btn btn-default" })</p>
+        </div>
+    }
+    else
+    {
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>View Players</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Here you can see a list of all Players.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p>@Html.ActionLink("Players", "PlayerView", "Player", null, new { @class = "btn btn-default" })</p>
     </div>
+
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>View Teams</h2>
+        <p>Here you will be able to view the List of Teams.</p>
+        <p>@Html.ActionLink("Teams", "TeamView", "Teams", null, new { @class = "btn btn-default" })</p>
     </div>
+
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Player LeaderBoard</h2>
+        <p>Here is the Player Leaderboard based on higest KDAs.</p>
+        <p>@Html.ActionLink("Player Stats", "StatsView", "Stats", null, new { @class = "btn btn-default" })</p>
     </div>
+
+    <div class="col-md-4">
+        <h2>Team LeaderBoard</h2>
+        <p>Here can view the Team Leaderboard based on the Highest Team KDAs.</p>
+        <p>@Html.ActionLink("TeamsLeaderBoard", "ComingSoon", "ComingSoon", null, new { @class = "btn btn-default" })</p>
+    </div>
+    }
 </div>

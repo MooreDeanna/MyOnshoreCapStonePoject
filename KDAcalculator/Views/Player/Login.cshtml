@@ -6,6 +6,23 @@
 <h2>Login</h2>
 @using (Html.BeginForm("Login", "Player", FormMethod.Post))
 {
-    @p
+    <div class="container">
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.PlayerName, "Player Name")
+            @Html.TextBoxFor(m => m.PlayerName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.PlayerName)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.PlayerPassword, "Enter Your Password")
+            @Html.PasswordFor(m => m.PlayerPassword, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.PlayerPassword)
+        </div>
+
+    </div>
+
+    <input type="submit" class="btn-danger" value="Login"/>        
 }
+
 

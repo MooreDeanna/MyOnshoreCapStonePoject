@@ -7,6 +7,7 @@ using DataAccessLayer.DA_Objects;
 using LogicLayer.LL_Objects;
 
 
+
 namespace LogicLayer
 {
     public class LL_Mapper
@@ -60,7 +61,7 @@ namespace LogicLayer
             _StatsToReturn.FKPlayerName = _StatsToMap.FKPlayerName;
 
             return _StatsToReturn;
-        }
+        }              
 
     }
 }

@@ -1,0 +1,33 @@
+﻿@model PresentationLayer.Models.StatsList
+@using PresentationLayer.Models
+
+@{
+    ViewBag.Title = "StatsView";
+}
+<h2>StatsView</h2>
+@using (Html.BeginForm("StatsView", "Stats", FormMethod.Post))
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>FKPlayerName</th>
+                <th>Kills</th>
+                <th>Deaths</th>
+                <th>Average</th>                
+
+            </tr>
+        </thead>
+
+
+        @foreach (StatsModel StatsView in Model._StatsList)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => StatsView.FKPlayerName)</td>
+                <td>@Html.DisplayFor(m => StatsView.Kills)</td>
+                <td>@Html.DisplayFor(m => StatsView.Deaths)</td>
+                <td>@Html.DisplayFor(m => StatsView.Average)</td>                
+            </tr>
+        }
+
+    </table>
+}

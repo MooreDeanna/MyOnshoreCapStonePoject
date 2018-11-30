@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using DataAccessLayer.DA_Objects;
+using LogicLayer.LL_Objects;
 
 namespace PresentationLayer.Models
 {
@@ -39,9 +40,9 @@ namespace PresentationLayer.Models
         return _PlayerToReturn;
     }
     //Stats Mappers
-    public StatsDAO Map(StatsModel _StatsToMap)
+    public StatsLLObject Map(StatsModel _StatsToMap)
     {
-        StatsDAO _StatsToReturn = new StatsDAO();
+        StatsLLObject _StatsToReturn = new StatsLLObject();
         _StatsToReturn.Kills = _StatsToMap.Kills;
         _StatsToReturn.Deaths = _StatsToMap.Deaths;
         _StatsToReturn.Average = _StatsToMap.Average;
@@ -49,16 +50,16 @@ namespace PresentationLayer.Models
 
         return _StatsToReturn;
     }
-    public StatsModel Map(StatsDAO _StatsToMap)
-    {
-        StatsModel _StatsToReturn = new StatsModel();
-        _StatsToReturn.Kills = _StatsToMap.Kills;
-        _StatsToReturn.Deaths = _StatsToMap.Deaths;
-        _StatsToReturn.Average = _StatsToMap.Average;
-        _StatsToReturn.FKPlayerName = _StatsToMap.FKPlayerName;
+    //public StatsModel Map(StatsLLObject _StatsToMap)
+    //{
+    //    StatsLLObject _StatsToReturn = new StatsLLObject();
+    //    _StatsToReturn.Kills = _StatsToMap.Kills;
+    //    _StatsToReturn.Deaths = _StatsToMap.Deaths;
+    //    _StatsToReturn.Average = _StatsToMap.Average;
+    //    _StatsToReturn.FKPlayerName = _StatsToMap.FKPlayerName;
 
-        return _StatsToReturn;
-    }
+    //    return _StatsToReturn;
+    //}
     //Teams Mapping
     public TeamsDAO Map(TeamsModel _TeamsToMap)
     {
@@ -97,8 +98,10 @@ namespace PresentationLayer.Models
             _Player.PlayerCity = _dataPlayer.PlayerCity;
             _Player.PlayerState = _dataPlayer.PlayerState;
             _Player.PlayerAge = _dataPlayer.PlayerAge;
+            _Player.FKRoleID = _dataPlayer.FKRoleID;
+            _Player.PlayerPassword = _dataPlayer.PlayerPassword;
 
-            _ListPlayer.Add(_Player);
+                _ListPlayer.Add(_Player);
         }
         return _ListPlayer;
     }

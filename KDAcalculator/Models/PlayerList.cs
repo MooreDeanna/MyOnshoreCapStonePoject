@@ -14,6 +14,7 @@ namespace PresentationLayer.Models
         {
             SinglePlayer = new PlayerModel();
             _PlayerList = new List<PlayerModel>();
+            
         }
     }
 }

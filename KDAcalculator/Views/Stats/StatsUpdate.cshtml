@@ -1,0 +1,39 @@
+﻿@model PresentationLayer.Models.StatsModel
+
+@{
+    ViewBag.Title = "StatsUpdate";
+}
+
+<h2>StatsUpdate</h2>
+
+@using (Html.BeginForm("StatsUpdate", "Stats", FormMethod.Post))
+{
+
+    // @Html.ValidationSummary()
+    <div class="container">
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.FKPlayerName)
+            @Html.TextBoxFor(m => m.FKPlayerName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.FKPlayerName)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Kills)
+            @Html.TextBoxFor(m => m.Kills, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Kills)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Deaths)
+            @Html.TextBoxFor(m => m.Deaths, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Deaths)
+        </div>       
+
+    </div>
+    <input type="submit" class="btn-danger" value="Finsihed?" />
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
